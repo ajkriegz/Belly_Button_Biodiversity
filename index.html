@@ -1,15 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Greek gods</title>
-    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bellybutton Biodiversity</title>
+  <style> img {width: 100%} </style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
-<body>
-    <div id="plot"></div>
-    <script src="data.js"></script>
-    <script src="plots.js"></script>
+
+<body style="background-color:rgb(190, 226, 255)">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center" style="background-image: url(https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmedia.istockphoto.com%2Fphotos%2Flaboratory-glassware-containing-chemical-liquid-science-background-picture-id1067056942%3Fk%3D6%26m%3D1067056942%26s%3D612x612%26w%3D0%26h%3DgHGREkqAva04w1ocwKdZtqgo8NYvs4ahfxtbiHOFHuo%3D&f=1&nofb=1); background-size: 130% 130%; opacity: 1.0; border-style:solid;">
+        <h1 style="color: rgb(114, 8, 117)"><b>Belly Button Biodiversity Dashboard</b></h1>
+        <h4 style="color: darkblue"><b>Use the interactive charts below to explore the dataset</b></h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" style="border-style: outset; background-color:white; ">
+        <p><font face="Gothic" size=4> <b>This dashboard serves to aid in exploratory analysis of bacterial data
+          for our volunteers. Specifically, volunteers are able to identify the top 10 bacterial species in their belly buttons.
+          If Improbable Beef identifies a species of belly button bacteria as a candidate for manufacturing synthetic beef,
+          the volunteer will be able to identify if that species is found in their navel.</b>
+        </font></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2" style="border-style: outset; background-color: white;">
+        <div class="well">
+          <h5>Test Subject ID No.:</h5>
+          <!-- <select id="selDataset"></select> -->
+          <select id="selDataset" onchange="optionChanged(this.value)"></select>
+        </div>
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title">Demographic Info</h3>
+          </div>
+          <div id="sample-metadata" class="panel-body"></div>
+        </div>
+      </div>
+      <div class="col-md-5" style="border-style: outset; background-color: white;">
+        <div id="bar"></div>
+      </div>
+      <div class="col-md-5" style="border-style: outset; background-color: white;">
+        <div id="gauge"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12" style="border-style: outset; background-color: white;">
+        <div id="bubble"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="charts.js"></script>
+
 </body>
+
 </html>
